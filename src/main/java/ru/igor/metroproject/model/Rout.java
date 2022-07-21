@@ -18,10 +18,9 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "route")
-public class Route extends AbstractBaseEntity {
+public class Rout extends AbstractBaseEntity {
 
     @Column(name = "code", nullable = false, unique = true)
     @NotNull
@@ -36,7 +35,7 @@ public class Route extends AbstractBaseEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Route route = (Route) o;
+        Rout route = (Rout) o;
         return getId() != null && Objects.equals(getId(), route.getId());
     }
 
