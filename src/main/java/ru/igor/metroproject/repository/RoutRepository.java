@@ -57,4 +57,7 @@ public class RoutRepository implements BaseRepository<Integer, Rout> {
         crudRoutRepository.delete(id);
     }
 
+    public void clean() {
+        crudRoutRepository.deleteAll();
+    }
 }

@@ -30,11 +30,11 @@ public class RoutService {
             return rout.get();
         } else {
             log.error("not found entity with id {}", id);
-            throw new NotFoundEntity("not found entity with id" + id);
+            throw new NotFoundEntity("not found entity with id " + id);
         }
     }
 
-    public Rout create(Rout rout) {
+    public Rout save(Rout rout) {
         Assert.notNull(rout, "rout must not be null");
         log.info("save rout {}", rout);
         return repository.saveOrUpdate(rout);
@@ -50,6 +50,10 @@ public class RoutService {
         if (get(id) != null) {
             repository.delete(id);
         }
+    }
+
+    public void clean() {
+        repository.clean();
     }
 
 
